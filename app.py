@@ -137,3 +137,25 @@ if __name__ == "__main__":
     if model is None:
         messagebox.showwarning("Model Warning", "Model could not be loaded. Please verify the path.")
     root.mainloop()
+
+
+
+# Part 3: The Correct Test Inputs
+# To show off your model successfully to your professor, use inputs that mathematically mimic real-world behavior inside the dataset's boundaries.
+# Test Case 1: The Blatant Bot
+# Bots use automated scripts, resulting in thousands of bids, high concurrency, and multiple rotating IP addresses to avoid platform bans.
+# Total Bids: 8500
+# Unique Auctions: 12
+# Unique Devices: 1
+# Unique IPs: 25 (Rotating IPs is a massive red flag for XGBoost)
+# Mean Time Diff: 0.02
+# Concurrent Bids Ratio: 0.75 (75% of bids placed at the exact same time)
+
+# Test Case 2: The Normal Human
+# Humans bid moderately. They only have one IP, they don't bid simultaneously, and they take time to think between bids.
+# Total Bids: 14
+# Unique Auctions: 3
+# Unique Devices: 1
+# Unique IPs: 1
+# Mean Time Diff: 145.0 (Taking over two minutes between bids)
+# Concurrent Bids Ratio: 0.0 (Zero simultaneous bids)
