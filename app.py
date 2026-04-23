@@ -99,7 +99,6 @@ def run_prediction():
     result_color = "red" if is_bot else "green"
     
     lbl_result_status.config(text=result_text, fg=result_color)
-    lbl_result_prob.config(text=f"Confidence Score: {prob:.4f}")
 
 # --- GUI Setup ---
 root = tk.Tk()
@@ -129,15 +128,13 @@ tk.Button(root, text="Classify Bidder", command=run_prediction, bg="#0078D7", fg
 
 lbl_result_status = tk.Label(root, text="Awaiting Input...", font=("Arial", 16, "bold"))
 lbl_result_status.pack(pady=(5, 0))
-lbl_result_prob = tk.Label(root, text="", font=("Arial", 12))
-lbl_result_prob.pack()
+
 tk.Label(root, text="Decision Threshold: 0.09", font=("Arial", 9, "italic"), fg="gray").pack(side="bottom")
 
 if __name__ == "__main__":
     if model is None:
         messagebox.showwarning("Model Warning", "Model could not be loaded. Please verify the path.")
     root.mainloop()
-
 
 
 # Part 3: The Correct Test Inputs
