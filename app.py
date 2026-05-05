@@ -149,7 +149,7 @@ def run_prediction():
 # ---------------------------------------------------------------------
 # GUI
 root = tk.Tk()
-root.title("PartiX: Bot Detection System")
+root.title("Bot Detection System")
 root.geometry("420x450")
 root.configure(padx=20, pady=20)
 
